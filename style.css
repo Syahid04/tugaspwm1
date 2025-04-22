@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #121212;
+    display: flex;
+    justify-content: space-between; /* Mengatur agar elemen kiri dan kanan terpisah */
+    align-items: center; /* Menyelaraskan elemen di tengah secara vertikal */
+    padding: 30px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Bagian kiri (judul dan slogan) */
+header .left {
+    text-align: left;
+}
+
+/* Bagian kanan (menu produk, blog, kontak) */
+header .right {
+    display: flex;
+    justify-content: space-between; /* Mengatur menu agar sejajar di kanan */
+    align-items: center;
+}
+
+/* Judul */
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* Slogan */
+.slogan {
+    font-size: 1.1em;
+    font-style: italic;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Agar item menu sejajar secara horizontal */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #00adb5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sections */
+section {
+    padding: 40px 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    color: #eeeeee;
+}
+
+.center {
+    text-align: center;
+}
+
+/* Produk Card */
+.produk-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.produk {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.produk img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.produk h3 {
+    margin-bottom: 10px;
+    color: #00adb5;
+}
+
+.produk p {
+    color: #cccccc;
+    font-size: 0.95em;
+}
+
+/* Footer */
+footer {
+    background-color: #121212;
+    color: #aaaaaa;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    border-top: 1px solid #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .produk-container {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .slogan {
+        font-size: 1em;
+    }
+}
