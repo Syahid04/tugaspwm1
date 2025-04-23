@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* Body */
+/* Body: Mengatur font, warna latar belakang dan teks */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #1e1e1e;
@@ -12,38 +12,40 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
+/* HEADER */
+
+/* Container header utama */
 header {
     background-color: #121212;
     display: flex;
-    justify-content: space-between; /* Mengatur agar elemen kiri dan kanan terpisah */
-    align-items: center; /* Menyelaraskan elemen di tengah secara vertikal */
+    justify-content: space-between; /* Elemen disusun berjauhan secara horizontal */
+    align-items: center; /* Vertikal rata tengah */
     padding: 15px 20px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
-/* Bagian kiri (judul dan slogan) */
+/* Bagian kiri dalam header */
 header .left {
     text-align: left;
-	margin-bottom: 30px;
+    margin-bottom: 30px; /* Memberi ruang bawah di layout mobile */
 }
 
-/* Bagian kanan (menu produk, blog, kontak) */
+/* Menambahkan menu atau icon di kanan */
 header .right {
     display: flex;
-    justify-content: space-between; /* Mengatur menu agar sejajar di kanan */
+    justify-content: space-between;
     align-items: center;
 }
 
-/* Judul */
+/* Judul situs */
 header h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
     letter-spacing: 1px;
 }
 
-/* Slogan */
+/* Slogan di bawah judul */
 .slogan {
     font-size: 1.1em;
     font-style: italic;
@@ -51,28 +53,34 @@ header h1 {
     margin-bottom: 20px;
 }
 
-/* Navigation */
+/* NAVIGATION */
+
+/* Menghapus style default dan atur menu horizontal */
 nav ul {
     list-style: none;
     padding: 0;
-    display: flex; /* Agar item menu sejajar secara horizontal */
+    display: flex;
 }
 
 nav ul li {
     margin: 0 15px;
 }
 
+/* Gaya link menu */
 nav ul li a {
     color: #00adb5;
     text-decoration: none;
     font-weight: bold;
 }
 
-/* Sections */
+/* SECTIONS */
+
+/* Style umum section */
 section {
     padding: 40px 20px;
 }
 
+/* Judul section */
 h2 {
     text-align: center;
     margin-bottom: 30px;
@@ -80,17 +88,21 @@ h2 {
     color: #eeeeee;
 }
 
+/* Class untuk teks rata tengah */
 .center {
     text-align: center;
 }
 
-/* Produk Card */
+/* PRODUK CARD */
+
+/* Container produk menggunakan grid */
 .produk-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive */
     gap: 20px;
 }
 
+/* Style masing-masing card produk */
 .produk {
     background-color: #2a2a2a;
     border-radius: 12px;
@@ -98,6 +110,7 @@ h2 {
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
+/* Gambar produk */
 .produk img {
     width: 100%;
     max-height: 250px;
@@ -106,17 +119,21 @@ h2 {
     margin-bottom: 15px;
 }
 
+/* Judul produk */
 .produk h3 {
     margin-bottom: 10px;
     color: #00adb5;
 }
 
+/* Deskripsi produk */
 .produk p {
     color: #cccccc;
     font-size: 0.95em;
 }
 
-/* Footer */
+/* FOOTER */
+
+/* Bagian bawah halaman */
 footer {
     background-color: #121212;
     color: #aaaaaa;
@@ -126,7 +143,7 @@ footer {
     border-top: 1px solid #333;
 }
 
-/* Responsive */
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     nav ul li {
         display: block;
@@ -134,7 +151,7 @@ footer {
     }
 
     .produk-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 kolom di mobile */
     }
 
     header h1 {
@@ -145,79 +162,71 @@ footer {
         font-size: 1em;
     }
 }
-/* Tombol burger (hanya muncul di layar kecil) */
+
+/* TOMBOL BURGER - menu toggle */
+
+/* Tombol burger (default: disembunyikan) */
 .burger {
     font-size: 24px;
     background: none;
     border: none;
     color: #00adb5;
     cursor: pointer;
-    display: none; /* disembunyikan di layar besar */
-}
-
-/* Menu default (tampil horizontal di desktop) */
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
-
-/* Hide checkbox */
-#menu-toggle {
-  display: none;
-}
-
-/* Burger icon */
-.burger {
-  font-size: 28px;
-  color: #00adb5;
-  cursor: pointer;
-  display: none; /* Only visible on mobile */
-}
-
-/* Mobile menu style */
-@media (max-width: 768px) {
-  header {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-
-  .burger {
-    display: block;
-    padding: 10px;
-    font-size: 28px;
-    color: #00adb5;
-    cursor: pointer;
-    z-index: 1100;
-  }
-
-  nav {
     display: none;
-    position: absolute;
-    top: 70px; /* Menyesuaikan tinggi header */
-    right: 20px;
-    background-color: #121212;
-    padding: 15px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-  }
+}
 
-  nav ul {
-    flex-direction: column;
-    text-align: right;
-  }
+/* Sembunyikan checkbox menu-toggle */
+#menu-toggle {
+    display: none;
+}
 
-  nav ul li {
-    margin: 10px 0;
-  }
+/* Tombol burger akan tampil di layar kecil */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
 
-  #menu-toggle:checked ~ nav {
-    display: block;
-  }
+    .burger {
+        display: block;
+        padding: 10px;
+        font-size: 28px;
+        color: #00adb5;
+        cursor: pointer;
+        z-index: 1100;
+    }
 
-  .left {
-    width: auto;
-  }
+    /* Menu navigasi tersembunyi */
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px; /* Sesuaikan dengan tinggi header */
+        right: 20px;
+        background-color: #121212;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    /* Menu tampil vertikal di mobile */
+    nav ul {
+        flex-direction: column;
+        text-align: right;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Saat checkbox diklik, tampilkan menu */
+    #menu-toggle:checked ~ nav {
+        display: block;
+    }
+
+    /* Menyesuaikan lebar bagian kiri di mobile */
+    .left {
+        width: auto;
+    }
 }
